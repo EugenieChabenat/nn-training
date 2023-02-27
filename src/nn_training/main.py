@@ -17,8 +17,7 @@ import torch.utils.data
 import torch.utils.data.distributed
 from torch.utils.tensorboard import SummaryWriter
 
-#from nn_training import config, nn_modules
-import config, nn_modules
+from nn_training import config, nn_modules
 
 nn_module_names = sorted(name for name in nn_modules.__dict__
     if name.islower() and not name.startswith("__"))
