@@ -1,0 +1,24 @@
+#!/bin/bash
+#SBATCH --job-name=bash        
+#SBATCH --mail-type=ALL        
+#SBATCH --mail-user={ec3731@columbia.edu} # your email
+#SBATCH --mem=32gb                  # memory
+#SBATCH -c 32                       # number of cpu cores
+#SBATCH --time=48:00:00             # task time limit
+#SBATCH --gres=gpu:gtx2080:4        # type and number of gpus
+#SBATCH --nodelist=ax11             # which axon node to run on 
+
+# if nodelist is not specified, the task will run on 
+# whichever node that's available, prioritizing running 
+# Issa lab's node. If our lab has no node available, the
+# task will run on other lab's node as a "burst" task.
+# The burst task will be forced to stop if people from 
+# other labs need to use their node, and your script will
+# rerun on the next available node (note that the script
+# will not continue from previous states. It will simply
+# rerun). So, unless your code can handle forced stops,
+# it's better to run on our own nodes instead bursting 
+# into other labs' nodes. If the node you specify is not
+# available, the task will wait in line.
+
+python main.py
