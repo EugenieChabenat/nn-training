@@ -21,4 +21,4 @@
 # into other labs' nodes. If the node you specify is not
 # available, the task will wait in line.
 
-python main.py
+python main.py disentangle --co --fw_1.0 -m -t
