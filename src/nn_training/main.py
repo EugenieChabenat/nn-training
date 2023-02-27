@@ -19,6 +19,9 @@ from torch.utils.tensorboard import SummaryWriter
 
 from nn_training import config, nn_modules
 
+#import os
+os.environ["PL_TORCH_DISTRIBUTED_BACKEND"] = "gloo"
+
 nn_module_names = sorted(name for name in nn_modules.__dict__
     if name.islower() and not name.startswith("__"))
 
