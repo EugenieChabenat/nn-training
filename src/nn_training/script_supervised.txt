@@ -4,7 +4,6 @@
 #SBATCH --mail-user={ec3731@columbia.edu} # your email
 #SBATCH --mem=32gb                  # memory
 #SBATCH -c 32                       # number of cpu cores
-#SBATCH --time=48:00:00             # task time limit
 #SBATCH --gres=gpu:gtx2080:4        # type and number of gpus
 #SBATCH --nodelist=ax11             # which axon node to run on 
 
