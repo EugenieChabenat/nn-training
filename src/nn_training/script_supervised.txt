@@ -22,5 +22,5 @@
 # into other labs' nodes. If the node you specify is not
 # available, the task will wait in line.
 
-python main.py supervised -s 400 --epochs 1
+python main.py supervised -s 400 --batch-size 1024 --epochs 1
 #disentangle --epochs 1 --co --fw_1.0 -m -t
