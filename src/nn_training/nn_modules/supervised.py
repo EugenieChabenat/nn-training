@@ -61,7 +61,7 @@ def scheduler_parser():
     
     return parser
 
-def get_scheduler(optimizer, *, step_size=30, gamma=0.1):
+def get_scheduler(optimizer, *, step_size=100, gamma=0.1): #used to be 30
     scheduler = StepLR(optimizer, step_size=step_size, gamma=gamma)
     
     return scheduler
