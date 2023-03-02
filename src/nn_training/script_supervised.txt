@@ -4,6 +4,8 @@
 #SBATCH --mail-user={ec3731@columbia.edu} # your email
 #SBATCH --mem=32gb                  # memory
 #SBATCH -c 32                       # number of cpu cores
+#SBATCH --time=00:02:00             # task time limit
+
 #SBATCH --gres=gpu:gtx2080:4        # type and number of gpus
 #SBATCH --nodelist=ax11             # which axon node to run on 
 
@@ -21,4 +23,4 @@
 # available, the task will wait in line.
 
 python main.py supervised
-#disentangle --co --fw_1.0 -m -t
+#disentangle --epochs 1 --co --fw_1.0 -m -t
