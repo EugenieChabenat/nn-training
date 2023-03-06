@@ -7,7 +7,7 @@ import torchvision.models as models
 from torch.optim.lr_scheduler import StepLR
 
 from nn_training import config, transforms, datasets, pca, distributed
-import utils
+#import utils
 
 def model_parser():
     parser = argparse.ArgumentParser(argument_default=argparse.SUPPRESS)
