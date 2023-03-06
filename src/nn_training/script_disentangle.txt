@@ -7,4 +7,4 @@
 #SBATCH --time=48:00:00             # task time limit
 #SBATCH --nodelist=ax11             # which axon node to run on 
 
-python main.py disentangle --co --fw_1.0 -m -t
+python main.py disentangle #--co --fw_1.0 -m -t
