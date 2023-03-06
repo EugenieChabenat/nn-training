@@ -25,8 +25,9 @@ import sys
 sys.path.insert(1, '/share/issa/users/ec3731/nn-training/src/nn_training/')
 sys.path.insert(1, '/nn-training/src/nn_training/nn_modules')
 sys.path.insert(1, '/nn-training/src/nn_training/config.ini')
-import config 
-import nn_modules
+from nn_training import config, nn_modules
+#import config 
+#import nn_modules
 #from src.nn_training.nn_modules import supervised
 #from nn-training.src.nn_training import config, nn_modules
 #from nn_training import config
