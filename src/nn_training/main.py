@@ -21,14 +21,14 @@ from torch.utils.tensorboard import SummaryWriter
 #from nn_training import config, nn_modules
 
 #--added
+import sys
+sys.path.insert(1, '/nn-training/src/nn_training/nn_modules')
+sys.path.insert(1, '/nn-training/src/nn_training/config.ini')
 import config 
 import nn_modules
 #from src.nn_training.nn_modules import supervised
 #from nn-training.src.nn_training import config, nn_modules
-#import sys
 #from nn_training import config
-# caution: path[0] is reserved for script path (or '' in REPL)
-#sys.path.insert(1, '/nn-training/src/nn_training/nn_modules')
 #import supervised, disentangle
 #import nn_modules
 #--
