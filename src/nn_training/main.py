@@ -18,7 +18,7 @@ import torch.utils.data.distributed
 from torch.utils.tensorboard import SummaryWriter
 
 #from nn_training import config, nn_modules
-from nn-training.src.nn_training.nn_modules import supervised
+from src.nn_training.nn_modules import supervised
 
 #from nn-training.src.nn_training import config, nn_modules
 
