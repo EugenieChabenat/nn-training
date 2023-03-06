@@ -119,6 +119,8 @@ def main():
         args.rank = int(os.getenv('SLURM_NODEID'))
 
     args.distributed = args.world_size > 1 or args.multiprocessing_distributed
+    
+    print('torch.version.cuda: ', torch.version.cuda)
 
     ngpus_per_node = torch.cuda.device_count()
     print("ngpus_per_node: ", ngpus_per_node)
