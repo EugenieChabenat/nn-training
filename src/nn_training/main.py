@@ -92,6 +92,7 @@ parser.add_argument('-t', '--tensorboard', action='store_true',
                     help='log training statistics to tensorboard')
 
 def main():
+    print("in main")
     args = parser.parse_args()
 
     if args.seed is not None:
