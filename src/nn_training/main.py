@@ -17,9 +17,10 @@ import torch.utils.data
 import torch.utils.data.distributed
 from torch.utils.tensorboard import SummaryWriter
 
+# original line
 #from nn_training import config, nn_modules
-from src.nn_training.nn_modules import supervised
 
+#from src.nn_training.nn_modules import supervised
 #from nn-training.src.nn_training import config, nn_modules
 
 #import os
