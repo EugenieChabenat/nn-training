@@ -6,4 +6,4 @@
 #SBATCH--gres=gpu:2
 #SBATCH --time=48:00:00             # task time limit
 
-python main.py disentangle --batch-size 32 --epochs 2 -t #--co --fw_1.0 -m -t
+python main.py disentangle --batch-size 32 --epochs 2 -m -t #--co --fw_1.0 -m -t
