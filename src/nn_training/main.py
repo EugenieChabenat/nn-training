@@ -22,6 +22,7 @@ from torch.utils.tensorboard import SummaryWriter
 
 #--added
 import sys
+sys.path.insert(1, '/share/issa/users/ec3731/nn-training/src/nn_training/')
 sys.path.insert(1, '/nn-training/src/nn_training/nn_modules')
 sys.path.insert(1, '/nn-training/src/nn_training/config.ini')
 import config 
