@@ -18,21 +18,21 @@ import torch.utils.data.distributed
 from torch.utils.tensorboard import SummaryWriter
 
 # original line
-#from nn_training import config, nn_modules
+from nn_training import config, nn_modules
 
 #--added
 #from src.nn_training.nn_modules import supervised
 #from nn-training.src.nn_training import config, nn_modules
-import sys
-from nn_training import config
+#import sys
+#from nn_training import config
 # caution: path[0] is reserved for script path (or '' in REPL)
-sys.path.insert(1, '/nn-training/src/nn_training/nn_modules')
+#sys.path.insert(1, '/nn-training/src/nn_training/nn_modules')
 #import supervised, disentangle
-import nn_modules
+#import nn_modules
 #--
 
 #import os
-os.environ["PL_TORCH_DISTRIBUTED_BACKEND"] = "gloo"
+#os.environ["PL_TORCH_DISTRIBUTED_BACKEND"] = "gloo"
 
 nn_module_names = sorted(name for name in nn_modules.__dict__
     if name.islower() and not name.startswith("__"))
