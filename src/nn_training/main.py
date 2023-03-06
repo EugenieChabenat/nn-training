@@ -20,8 +20,14 @@ from torch.utils.tensorboard import SummaryWriter
 # original line
 #from nn_training import config, nn_modules
 
+#--added
 #from src.nn_training.nn_modules import supervised
 #from nn-training.src.nn_training import config, nn_modules
+import sys
+# caution: path[0] is reserved for script path (or '' in REPL)
+sys.path.insert(1, '/nn-training/src/nn_training/nn_modules')
+import supervised, disentangle
+#--
 
 #import os
 os.environ["PL_TORCH_DISTRIBUTED_BACKEND"] = "gloo"
@@ -29,12 +35,6 @@ os.environ["PL_TORCH_DISTRIBUTED_BACKEND"] = "gloo"
 nn_module_names = sorted(name for name in nn_modules.__dict__
     if name.islower() and not name.startswith("__"))
 
-#--added
-import sys
-# caution: path[0] is reserved for script path (or '' in REPL)
-sys.path.insert(1, '/nn-training/src/nn_training/nn_modules')
-import supervised, disentangle
-#--
 
 parser = argparse.ArgumentParser(description='PyTorch Training')
 parser.add_argument('nn_module', type=str, choices=nn_module_names,
