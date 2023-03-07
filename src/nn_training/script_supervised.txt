@@ -7,7 +7,6 @@
 #SBATCH --time=60:00:00             # task time limit
 
 #SBATCH --gres=gpu:gtx2080:4        # type and number of gpus
-#SBATCH --nodelist=ax11             # which axon node to run on 
 
 # if nodelist is not specified, the task will run on 
 # whichever node that's available, prioritizing running 
