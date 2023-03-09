@@ -6,7 +6,7 @@
 #SBATCH -c 32                       # number of cpu cores
 #SBATCH --time=60:00:00             # task time limit
 
-#SBATCH --gres=gpu:gtx2080:4        # type and number of gpus
+#SBATCH --gres=gpu:gtx2080:8       # type and number of gpus
 
 # if nodelist is not specified, the task will run on 
 # whichever node that's available, prioritizing running 
