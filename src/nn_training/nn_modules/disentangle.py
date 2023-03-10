@@ -58,8 +58,6 @@ class Model(torch.nn.Module):
 
         ptr = int(self.queue_ptr)
         
-        print('batch size = ', batch_size)
-        print('ptr = ', ptr)
         
         if self.queue_size % batch_size == 0:  # for simplicity
             # replace the keys at ptr (dequeue and enqueue)
