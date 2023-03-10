@@ -25,8 +25,7 @@ class Model(torch.nn.Module):
         self.encoder = resnet50
         self.encoder.fc = torch.nn.Identity()
         
-        #self.queue_size = queue_size
-        self.queue_size = 16
+        self.queue_size = queue_size
         self.register_buffer("queue", torch.randn(2048, self.queue_size))
         self.queue = torch.nn.functional.normalize(self.queue, dim=0)
         self.register_buffer("queue_ptr", torch.zeros(1, dtype=torch.long))
