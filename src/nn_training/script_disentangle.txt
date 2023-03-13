@@ -5,6 +5,6 @@
 #SBATCH --mem=32gb                  # memory
 #SBATCH --gres=gpu:gtx2080:8 
 
-#python main.py disentangle  --co --fw_1.0 -m -t
-python main.py disentangle -m -t --epochs 30 
+python main.py disentangle  --co --fw_1.0 -m -t
+#python main.py disentangle -m -t --epochs 30 
 #python main.py disentangle --batch-size 256 --epochs 10 -m -t --print-freq 10000 #--co --fw_1.0 -m -t
