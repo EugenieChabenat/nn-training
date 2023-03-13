@@ -224,6 +224,11 @@ def main_worker(gpu, ngpus_per_node, args):
             dirname += [f'--{name}', getattr(args, fullname)]
     dirname = '_'.join(dirname)
     
+    # -- test: checkpoint folder 
+    print('checkpoint saved at: ', config['paths']['checkpoints'])
+    
+    # -- 
+    
     # optionally resume from a checkpoint
     if args.resume is not None:
         args.resume = pathlib.Path(config['paths']['checkpoints']) / dirname / f'checkpoint_{args.resume:04d}.pth.tar'
