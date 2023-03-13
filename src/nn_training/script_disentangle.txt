@@ -4,7 +4,6 @@
 #SBATCH --mail-user={ec3731@columbia.edu} # your email
 #SBATCH --mem=32gb                  # memory
 #SBATCH --gres=gpu:gtx2080:8 
-#SBATCH --time=48:00:00             # task time limit
 
 python main.py disentangle --co --fw_1.0 -m -t
 
