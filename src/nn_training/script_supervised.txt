@@ -4,7 +4,6 @@
 #SBATCH --mail-user={ec3731@columbia.edu} # your email
 #SBATCH --mem=32gb                  # memory
 #SBATCH -c 32                       # number of cpu cores
-#SBATCH --time=60:00:00             # task time limit
 
 #SBATCH --gres=gpu:gtx2080:8       # type and number of gpus
 
