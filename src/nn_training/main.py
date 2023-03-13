@@ -271,6 +271,7 @@ def main_worker(gpu, ngpus_per_node, args):
     # Create SummaryWriter if writing to tensorboard
     args.writer = None
     if args.tensorboard and (not args.multiprocessing_distributed or args.rank % ngpus_per_node == 0):
+        print('saving to tensorboard..')
         args.writer = SummaryWriter(pathlib.Path(config['paths']['tensorboard']) / dirname)
 
     for epoch in range(args.start_epoch, args.epochs):
@@ -284,6 +285,7 @@ def main_worker(gpu, ngpus_per_node, args):
 
         if not args.multiprocessing_distributed or (args.multiprocessing_distributed
                 and args.rank % ngpus_per_node == 0):
+            print('saving checkpoint..')
             save_checkpoint({
                 'epoch': epoch + 1,
                 'state_dict': model.state_dict(),
