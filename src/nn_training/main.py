@@ -292,6 +292,7 @@ def main_worker(gpu, ngpus_per_node, args):
                 'optimizer' : optimizer.state_dict(),
                 'scheduler' : scheduler.state_dict()
             }, dirname=dirname, filename=f'checkpoint_{epoch+1:04d}.pth.tar')
+            print('dirname: ', dirname) 
 
 
 def train(train_loader, model, criterion, optimizer, epoch, args):
@@ -346,6 +347,7 @@ def train(train_loader, model, criterion, optimizer, epoch, args):
 
 def save_checkpoint(state, dirname=None, filename='checkpoint.pth.tar'):
     checkpoint_dir = pathlib.Path(config['paths']['checkpoints'])
+    print('checkpoint dir: ', checkpoint_dir)
     if dirname is not None:
         checkpoint_dir = checkpoint_dir / dirname
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
