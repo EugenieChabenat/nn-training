@@ -1,5 +1,3 @@
-#SBATCH --nodelist=ax11   
-
 #!/bin/bash
 #SBATCH --job-name=bash        
 #SBATCH --mail-type=ALL        
