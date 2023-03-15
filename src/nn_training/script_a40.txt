@@ -1,0 +1,12 @@
+#SBATCH --nodelist=ax11   
+
+#!/bin/bash
+#SBATCH --job-name=bash        
+#SBATCH --mail-type=ALL        
+#SBATCH --mail-user={ec3731@columbia.edu} # your email
+#SBATCH --mem=32gb                  # memory
+#SBATCH -c 32                       # number of cpu cores
+
+#SBATCH --nodelist=ax11   
+
+python main.py supervised --batch-size 256 --epochs 30 --print-freq 10000
