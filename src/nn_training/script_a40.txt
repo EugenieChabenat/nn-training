@@ -5,6 +5,6 @@
 #SBATCH --mem=32gb                  # memory
 #SBATCH -c 32                       # number of cpu cores
 
-#SBATCH --nodelist=ax11   
+#SBATCH --nodelist=ax13 
 
 python main.py supervised --batch-size 256 --epochs 30 --print-freq 10000
