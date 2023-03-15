@@ -349,8 +349,11 @@ def save_checkpoint(state, dirname=None, filename='checkpoint.pth.tar'):
     checkpoint_dir = pathlib.Path(config['paths']['checkpoints'])
     print('checkpoint dir: ', checkpoint_dir)
     if dirname is not None:
+        print('dirname is not None')
         checkpoint_dir = checkpoint_dir / dirname
+        print('checkpoint new: ', checkpoint_dir)
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
+    print('state: ', state)
     torch.save(state, checkpoint_dir / filename)
 
 class Summary(Enum):
