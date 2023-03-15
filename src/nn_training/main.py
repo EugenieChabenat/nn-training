@@ -258,6 +258,8 @@ def main_worker(gpu, ngpus_per_node, args):
         dataset_options = args.dataset_options.split('_')
     dataset_args = nn_modules.__dict__[args.nn_module].dataset_parser().parse_args(dataset_options)
     train_dataset = nn_modules.__dict__[args.nn_module].get_dataset(**vars(dataset_args))
+    
+    print('train_dataset (in main): ', train_dataset)
 
     if args.distributed:
         train_sampler = torch.utils.data.distributed.DistributedSampler(train_dataset)
@@ -311,6 +313,9 @@ def train(train_loader, model, criterion, optimizer, epoch, args):
     for i, (images, target) in enumerate(train_loader):
         if isinstance(images, torch.Tensor):
             images = [images] # images can be either a tensor or a list of tensor. convert to list of tensors always
+        
+        if i==0: 
+            print('image: \n', images)
             
         # measure data loading time
         data_time.update(time.time() - end)
