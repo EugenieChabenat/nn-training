@@ -1,7 +1,7 @@
 import os 
 
 
-root = ~
+root = '~'
 directory = '${root}/test_dir'
 
 
