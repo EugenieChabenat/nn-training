@@ -102,7 +102,7 @@ def main():
     filename= 'test.txt'
     torch.save(state, checkpoint_dir / filename)
     
-    os.mkdir('~/testing1')
+    #os.mkdir('~/testing1')
     os.makedirs('~/testing2')
     
     
