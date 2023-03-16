@@ -1,7 +1,5 @@
 import os 
-from nn_training import config, nn_modules 
 
-directory = pathlib.Path(config['paths']['checkpoints'])
-
+directory = '~/test_dir'
 
 os.mkdir(directory)
