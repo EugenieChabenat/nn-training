@@ -92,6 +92,19 @@ parser.add_argument('-t', '--tensorboard', action='store_true',
                     help='log training statistics to tensorboard')
 
 def main():
+    
+    print('test save')
+    torch.save()
+    checkpoint_dir = pathlib.Path(config['paths']['checkpoints'])
+    print('checkpoint dir: ', checkpoint_dir)
+    checkpoint_dir.mkdir(parents=True, exist_ok=True)
+    state_ = [2, 2, 2, 2, 2, 2]
+    state = torch.FloatTensor(state_)
+    filename= 'test.txt'
+    torch.save(state, checkpoint_dir / filename)
+    
+    
+    
     print("in main")
     args = parser.parse_args()
 
