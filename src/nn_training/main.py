@@ -94,7 +94,6 @@ parser.add_argument('-t', '--tensorboard', action='store_true',
 def main():
     
     print('test save')
-    torch.save()
     checkpoint_dir = pathlib.Path(config['paths']['checkpoints'])
     print('checkpoint dir: ', checkpoint_dir)
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
