@@ -91,21 +91,7 @@ parser.add_argument('-m', '--multiprocessing-distributed', action='store_true',
 parser.add_argument('-t', '--tensorboard', action='store_true',
                     help='log training statistics to tensorboard')
 
-def main():
-    
-    print('test save')
-    checkpoint_dir = pathlib.Path(config['paths']['checkpoints'])
-    print('checkpoint dir: ', checkpoint_dir)
-    checkpoint_dir.mkdir(parents=True, exist_ok=True)
-    state_ = [2, 2, 2, 2, 2, 2]
-    state = torch.FloatTensor(state_)
-    filename= 'test.txt'
-    torch.save(state, checkpoint_dir / filename)
-    
-    #os.mkdir('~/testing1')
-    os.makedirs('~/testing2')
-    
-    
+def main():    
     
     print("in main")
     args = parser.parse_args()
