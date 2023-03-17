@@ -48,7 +48,7 @@ parser.add_argument('nn_module', type=str, choices=nn_module_names,
                         ' | '.join(nn_module_names))
 parser.add_argument('--mo', '--model-options', dest='model_options', type=str,
                     help='a string of options passed to nn_module.model (default: "")')
-parser.add_argument('--co', '--criterion-options', dest='criterion_options', type=str, #default="--fw_1.0", 
+parser.add_argument('--co', '--criterion-options', dest='criterion_options', type=str, default="--fw_1.0", 
                     help='a string of options passed to nn_module.criterion (default: "")')
 parser.add_argument('--oo', '--optimizer-options', dest='optimizer_options', type=str,
                     help='a string of options passed to nn_module.optimizer (default: "")')
