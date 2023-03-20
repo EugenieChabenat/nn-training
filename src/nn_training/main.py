@@ -315,8 +315,6 @@ def train(train_loader, model, criterion, optimizer, epoch, args):
         if isinstance(images, torch.Tensor):
             images = [images] # images can be either a tensor or a list of tensor. convert to list of tensors always
         
-        if i==0: 
-            print('image: \n', images)
             
         # measure data loading time
         data_time.update(time.time() - end)
@@ -353,13 +351,9 @@ def train(train_loader, model, criterion, optimizer, epoch, args):
 
 def save_checkpoint(state, dirname=None, filename='checkpoint.pth.tar'):
     checkpoint_dir = pathlib.Path(config['paths']['checkpoints'])
-    print('checkpoint dir: ', checkpoint_dir)
     if dirname is not None:
-        print('dirname is not None')
         checkpoint_dir = checkpoint_dir / dirname
-        print('checkpoint new: ', checkpoint_dir)
     checkpoint_dir.mkdir(parents=True, exist_ok=True)
-    print('state: ', state)
     torch.save(state, checkpoint_dir / filename)
 
 class Summary(Enum):
