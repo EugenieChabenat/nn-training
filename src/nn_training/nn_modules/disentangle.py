@@ -110,12 +110,11 @@ class Criterion(torch.nn.Module):
             )
         }
         
-        print('\nloss before: \n', loss)
+        print('weights.shape: ', weights.shape)
+        print('weights: ', weights)
         
         loss = sum([v1 * v2 for _, v1, v2 in utils.itertools.dict_zip(loss, self.weights, mode='strict')])
-        
-        print('\nloss after: \n', loss)
-        print('\ninfo: \n', info)
+
         
         return loss, info
     
