@@ -110,8 +110,8 @@ class Criterion(torch.nn.Module):
             )
         }
         
-        print('weights.shape: ', weights.shape)
-        print('weights: ', weights)
+        print('weights.shape: ', self.weights.shape)
+        print('weights: ', self.weights)
         
         loss = sum([v1 * v2 for _, v1, v2 in utils.itertools.dict_zip(loss, self.weights, mode='strict')])
 
