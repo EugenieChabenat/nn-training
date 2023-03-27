@@ -89,6 +89,11 @@ class Criterion(torch.nn.Module):
         self.criteria = torch.nn.ModuleDict(criteria)
     
     def forward(self, input, target):
+        
+        # --- added 
+        print('\nInside forward criterion\n')
+        # ---
+        
         info = {
             'supervised': self.criteria['supervised'](input['out_1'], target['label']),
             'factorization': input['factorization'],
@@ -105,7 +110,12 @@ class Criterion(torch.nn.Module):
             )
         }
         
+        print('\nloss before: \n', loss)
+        
         loss = sum([v1 * v2 for _, v1, v2 in utils.itertools.dict_zip(loss, self.weights, mode='strict')])
+        
+        print('\nloss after: \n', loss)
+        print('\ninfo: \n', info)
         
         return loss, info
     
